@@ -36,7 +36,11 @@ export default function ContactForm() {
       name: name,
       number: number,
     };
-    if (allContacts.some(item => item.name === contact.name)) {
+    if (
+      allContacts.some(
+        item => item.name.toLowerCase() === contact.name.toLowerCase()
+      )
+    ) {
       alert(`Contact ${contact.name} already exist`);
       return;
     }
